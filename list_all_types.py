@@ -8,7 +8,6 @@ import ifcopenshell
 def extract_types(ifc_path: str) -> list[str]:
     model = ifcopenshell.open(ifc_path)
 
-    # Keep only "real model objects" / physical building elements
     types_found = {
         inst.is_a()
         for inst in model
